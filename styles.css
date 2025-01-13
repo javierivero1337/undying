@@ -1,0 +1,284 @@
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: #e6e6e6;
+    --accent-color: #8b0000;
+    --hover-color: #610000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Crimson Text', serif;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+h1 {
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.story-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.story-category h2 {
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.story-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.story-link {
+    display: block;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.story-link:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.story-link h3 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    margin-top: 4rem;
+    text-align: center;
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+    .story-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.subtitle a {
+    color: var(--accent-color);
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.subtitle a:hover {
+    color: var(--text-color);
+}
+
+.subtitle a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.subtitle a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Style for general links in the content */
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+.story-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(139, 0, 0, 0.2);
+}
+
+.story-card h2 {
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    color: var(--text-color);
+}
+
+.story-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.primary-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--accent-color);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.primary-link:hover {
+    background-color: var(--hover-color);
+    color: var(--text-color);
+}
+
+.link-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.primary-link:hover .link-icon {
+    transform: translateX(5px);
+}
+
+.narrations {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+}
+
+.narrations h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.narration-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.narration-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.narration-link:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: var(--accent-color);
+}
+
+.channel {
+    font-weight: 600;
+}
+
+.views {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+@media (min-width: 1200px) {
+    .story-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Add these new styles */
+.primary-link.amazon-link {
+    background-color: #232f3e;  /* Amazon's dark blue color */
+    border: 1px solid #48a3c6;  /* Amazon's light blue */
+}
+
+.primary-link.amazon-link:hover {
+    background-color: #37475a;  /* Slightly lighter blue on hover */
+    border-color: #59b7dc;
+}
+
+.primary-link.amazon-link .link-text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.story-cover {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.story-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.story-cover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;;
+}
+
+.story-card:hover .story-cover img {
+    transform: scale(1.05);
+}
